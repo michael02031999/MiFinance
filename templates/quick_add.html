@@ -1,0 +1,88 @@
+{% extends 'base.html' %} {% block title %} Quick add {% endblock %} {% block
+icon %}
+
+<a class="miFinance text navbar-brand" href="/loggedIndex">MiFinance</a>
+
+{% endblock %} {% block nav %}
+
+<li>
+  <a class="text nav-link active" aria-current="page" href="/data">Data</a>
+</li>
+<li class="nav-item">
+  <a class="text nav-link" href="/journal">Journal</a>
+</li>
+<li class="nav-item">
+  <a class="text nav-link" href="/quick_add">Quick Add</a>
+</li>
+
+{% endblock %} {% block logout %}
+
+<a id="logoutButton" class="text nav-link" href="/logout">Logout</a>
+
+{% endblock %} {% block content %}
+
+<div class="container">
+  <table class="table table-success table-striped text-center">
+    <thead>
+      <tr>
+        <th scope="col">Month</th>
+        <th scope="col">Type</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Form</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for transactionAboveFive in transactionsAboveFive %}
+
+      <tr>
+        <th scope="row">{{ transactionAboveFive[0] }}</th>
+        <td>{{ transactionAboveFive[1] }}</td>
+        <td>{{ transactionAboveFive[2] }}</td>
+        <td>{{ transactionAboveFive[3] }}</td>
+        <td>
+          <form
+            class="row g-2 d-flex align-items-center flex-column"
+            action="/quick_add"
+            method="post"
+          >
+            <div class="col-auto">
+              <input
+                name="transactionType"
+                type="text"
+                class="form-control form-control-lg text-center w-100"
+                placeholder="Transaction Name"
+                value="{{transactionAboveFive[1]}}"
+              />
+            </div>
+            <div class="col-auto">
+              <input
+                name="transactionName"
+                type="text"
+                class="form-control form-control-lg text-center w-100"
+                placeholder="Transaction Name"
+                value="{{transactionAboveFive[2]}}"
+              />
+            </div>
+            <div class="col-auto">
+              <input
+                name="price"
+                type="text"
+                class="form-control form-control-lg text-center w-100"
+                placeholder="Price"
+                value="{{transactionAboveFive[3]}}"
+              />
+            </div>
+            <button type="submit" class="btn btn-danger w-50">
+              Purchase again
+            </button>
+          </form>
+        </td>
+      </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

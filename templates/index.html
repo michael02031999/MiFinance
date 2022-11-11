@@ -1,0 +1,165 @@
+{% extends 'base.html' %} {% block title %} index {% endblock %} 
+
+{% block icon %} 
+
+<a class="miFinance text navbar-brand" href="/">MiFinance</a>
+
+{% endblock %}
+
+{% block logout %}
+
+<a class="text nav-link" href="/register">Register</a>
+</span>
+<span class="navbar-text">
+  <a class="text nav-link" href="/login">Login</a>
+
+{% endblock %}
+
+
+{% block content %}
+
+<!-- <div id="loggedOutAlert" class="alert alert-danger text-center" role="alert">
+  {{ message }}
+</div>
+ -->
+
+ {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for msg in messages %}
+        <div id="loggedOutAlert" class="alert alert-danger text-center" role="alert">
+          {{msg}}
+        </div>
+      {% endfor %}
+
+    {% endif%}
+ {% endwith %}
+
+
+<div class="appDescription container p-5">
+  <div class="row mb-4">
+    <div class="col text-center">
+      <h1>How to use MiFinance</h1>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col text-center">
+      <h2>50-30-20 Budget</h1>
+    </div>
+  </div>
+  <div class="row mb-4">
+
+    <div class="col">
+      <ol class="instructions list-group list-group-numbered">
+        <li class="liInstruct list-group-item">
+          <strong
+            >The 50/30/20 budget divides your after-tax income into three
+            separate categories</strong
+          >: 50% for needs, 30% for wants and 20% for savings/financial goals.
+        </li>
+        <li class="liInstruct list-group-item">
+          <strong
+            >This approach is best for younger, average-income earners who have
+            paid off their high-interest debt</strong
+          >. Things get out of whack quickly for both low-income and high-income
+          individuals and families, because your needs neither double when your
+          income doubles nor shrink by 50% when your income declines.
+        </li>
+        <li class="liInstruct list-group-item">
+          <strong
+            >There’s a lot of value in measuring yourself with the 50/30/20
+            budget</strong
+          >. Even if you choose not to actually use the formula for your budget,
+          it’s a helpful framework for determining whether you can afford larger
+          purchases like a house or a car.
+        </li>
+      </ol>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col text-center mt-5 mb-4">
+        <h2>50/30/20 Budget Plan Explained</h2>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col">
+
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="static/images/foodclothingshelter.jpeg" class="d-block w-100 " alt="...">
+              
+                <p class="carouselText1 w-75 mx-auto ">This budget approach states that you should spend 50% of the money you earn on necessary items, such as housing, transportation and other bills.
+
+                  Here are the most common “needs” that get folded into this category:</p>
+                  <div class="listDiv mx-auto">
+                    <ul class= "carouselList1 carouselList mx-auto">
+                      <li>Housing</li>
+                      <li>Transportation</li>
+                      <li>Utilities</li>
+                      <li>Groceries</li>
+                      <li>Insurance premiums</li>
+                    </ul>  
+                    <ul class = "carouselList2 carouselList mx-auto">
+        
+                      <li>Medical bills</li>
+                      <li>Basic Clothing</li>
+                      <li>Credit Card</li>
+                      <li>Debit Card</li>
+                      <li>Student Loans</li>
+                    </ul>
+                  </div>
+                 
+                  
+
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="static/images/wants.png" class="d-block h-50 mx-auto" alt="...">
+              <p class="carouselText1 w-75 mx-auto ">This is what some people think of as the “fun” category. It includes things you want but could certainly live without.
+
+                Here are some of the common expenses that get classified as “wants”:</p>
+                <ul class= "carouselList mx-auto">
+                  <li>Date nights</li>
+                  <li>Eating out</li>
+                  <li>Entertainment</li>
+                  <li>Gym membership</li>
+                  <li>Hobbies</li>
+                  <li>Streaming TV</li>
+                  <li>Travel</li>
+                </ul>  
+          
+            </div>
+            <div class="carousel-item">
+              <img src="static/images/savings.jpeg" class="d-block h-75 mx-auto" alt="...">
+              <p class="carouselText1 w-75 mx-auto ">The next number to think about in this budget 
+                formula is 20%. This is the money that goes towards achieving your financial goals, 
+                which may include:</p>
+                <ul class= "carouselList mx-auto">
+                  <li>Building an emergency fund.</li>
+                  <li>Paying off high-interest debt.</li>
+                  <li>Contributing to IRAs</li>
+                  <li>401(k)s</li>
+                  <li>Other retirement accounts</li>
+                </ul>  
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

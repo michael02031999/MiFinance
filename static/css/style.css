@@ -1,0 +1,164 @@
+/* Base Layout */
+
+.navbar {
+  background-color: #40c9a2;
+}
+
+.text {
+  color: #664147 !important;
+
+  font-size: 22px !important;
+}
+
+.miFinance {
+  font-size: 22px !important;
+}
+
+body {
+  background-color: #e5e9e0 !important;
+}
+
+/* End of Base Layout */
+
+/* Start of index.html */
+
+.appDescription {
+  border: 10px solid #ffffdb;
+  border-top: none;
+  border-bottom: none;
+}
+
+.instructions {
+  width: 75%;
+  margin: 0 auto;
+  background-color: #ffffdb !important;
+}
+
+.liInstruct {
+  background-color: #ffffdb !important;
+}
+
+.carouselText1 {
+  font-size: 25px;
+  padding: 20px;
+  text-align: justify;
+}
+
+.carouselList {
+  margin-top: -10px;
+  font-size: 20px;
+  width: 45%;
+}
+
+.listDiv {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.carouselList2 {
+  display: inline-block;
+}
+
+@media screen and (min-width: 768px) {
+  .listDiv {
+    width: 65% !important;
+  }
+}
+
+/* Start of data.html */
+
+#graphContainer {
+  gap: 50px;
+  margin-bottom: 40px;
+}
+
+.graph1,
+.graph2 {
+  border: 10px solid #666147;
+  border-radius: 10px;
+  padding: 10px;
+  /* height: 350px !important; */
+}
+
+.addCashContainer {
+  width: 200px !important;
+}
+
+.cashContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+#moreMoneyNotice {
+  margin: -20px !important;
+  padding: 15px !important;
+}
+
+.cashOnHand {
+  border: 10px solid green;
+  /*  border-radius: 50%; */
+  border-radius: 10%;
+  padding: 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+
+  width: fit-content;
+  /* margin-top: 40px; */
+}
+
+@media screen and (max-width: 768px) {
+  .graph1,
+  .graph2 {
+    height: 350px !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .graph1,
+  .graph2 {
+    padding: 30px;
+  }
+}
+
+/* Journal Form */
+
+.journalContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.journalForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.selectForm {
+  height: 50px;
+  width: 250px !important;
+  font-size: 20px !important;
+  padding-left: 17.5px !important;
+  color: rgb(108, 117, 125) !important;
+}
+
+@media screen and (min-width: 1100px) {
+  .journalForm {
+    flex-direction: row;
+  }
+}
+
+/* ERROR MESSAGE */
+
+#errorLocation {
+  font-family: monospace !important;
+}
+
+#errorMessage {
+  font-family: monospace !important;
+}

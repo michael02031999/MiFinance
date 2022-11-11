@@ -1,0 +1,78 @@
+{% extends 'base.html' %} {% block title %} Data {% endblock %} {% block icon %}
+
+<a class="miFinance text navbar-brand" href="/loggedIndex">MiFinance</a>
+
+{% endblock %} {% block nav %}
+
+<li>
+  <a class="text nav-link active" aria-current="page" href="/data">Data</a>
+</li>
+<li class="nav-item">
+  <a class="text nav-link" href="/journal">Journal</a>
+</li>
+<li class="nav-item">
+  <a class="text nav-link" href="/quick_add">Quick Add</a>
+</li>
+
+{% endblock %} {% block logout %}
+
+<a id="logoutButton" class="text nav-link" href="/logout">Logout</a>
+
+{% endblock %} {% block content %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.4.0/dist/chartjs-plugin-datalabels.min.js"
+></script>
+<!-- <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"
+  integrity="sha512-Tfw6etYMUhL4RTki37niav99C6OHwMDB2iBT5S5piyHO+ltK2YX8Hjy9TXxhE1Gm/TmAV0uaykSpnHKFIAif/A=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script> -->
+<div
+  id="graphContainer"
+  class="container mx-auto d-flex flex-column align-items-center mt-5"
+>
+  <div id="moreMoneyNotice" class="m-0" role="alert">Need mo money!</div>
+
+  <p id="month" style="display: none">{{month}}</p>
+  <div class="cashContainer">
+    <div class="cashMiniContainer">
+      <div class="cashOnHand">
+        <h1 id="cashOnHandFormatter">{{ cash }}</h1>
+      </div>
+    </div>
+
+    <form class="row g-3" action="/data" method="post">
+      <div class="addCashContainer input-group">
+        <span class="input-group-text">$</span>
+        <input
+          name="cash"
+          type="text"
+          class="form-control"
+          aria-label="Amount (to the nearest dollar)"
+        />
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-success">Add cash!</button>
+      </div>
+    </form>
+  </div>
+
+  <canvas
+    class="graph1"
+    id="donutChart"
+    style="width: 100%; max-width: 700px"
+  ></canvas>
+
+  <canvas
+    class="graph2"
+    id="lineGraph"
+    style="width: 100%; max-width: 700px"
+  ></canvas>
+</div>
+
+{% endblock %}

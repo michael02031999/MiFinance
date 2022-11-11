@@ -1,0 +1,115 @@
+{% extends 'base.html' %} {% block title %} Journal {% endblock %} {% block icon
+%}
+
+<a class="miFinance text navbar-brand" href="/loggedIndex">MiFinance</a>
+
+{% endblock %} {% block nav %}
+
+<li>
+  <a class="text nav-link active" aria-current="page" href="/data">Data</a>
+</li>
+<li class="nav-item">
+  <a class="text nav-link" href="/journal">Journal</a>
+</li>
+<li class="nav-item">
+  <a class="text nav-link" href="/quick_add">Quick Add</a>
+</li>
+
+{% endblock %} {% block logout %}
+
+<a id="logoutButton" class="text nav-link" href="/logout">Logout</a>
+
+{% endblock %} {% block content %}
+
+<p id="savings" style="display: none">{{ savingsCost }}</p>
+
+<p id="needs" style="display: none">{{ needsCost }}</p>
+
+<p id="wants" style="display: none">{{ wantsCost }}</p>
+
+<div class="journalContainer">
+  <form class="journalForm row g-4" action="/journal" method="post">
+    <!-- <div class="col-auto">
+      <input
+        name="cash"
+        type="text"
+        class="form-control form-control-lg"
+        placeholder="Cash on Hand"
+      />
+    </div> -->
+    <div class="col-auto">
+      <input
+        name="month"
+        type="number"
+        min="1"
+        max="12"
+        class="selectForm form-control form-control-lg"
+        placeholder="month"
+      />
+    </div>
+    <div class="col-auto">
+      <select
+        class="selectForm form-select form-control-lg"
+        aria-label="Default select example"
+        name="transactionType"
+      >
+        <option selected>Transaction Type</option>
+        <option value="Savings">Savings</option>
+        <option value="Wants">Wants</option>
+        <option value="Needs">Needs</option>
+      </select>
+    </div>
+    <div class="col-auto">
+      <input
+        name="transactionName"
+        type="text"
+        class="form-control form-control-lg"
+        placeholder="Transaction Name"
+      />
+    </div>
+    <div class="col-auto">
+      <input
+        name="price"
+        type="text"
+        class="form-control form-control-lg"
+        placeholder="Price"
+      />
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary">
+        Confirm Allocation of Funds
+      </button>
+    </div>
+  </form>
+</div>
+<div class="container p-5">
+  <table class="table text-center">
+    <thead>
+      <tr>
+        <!-- <th scope="col">#</th> -->
+        <th scope="col">Month</th>
+        <th scope="col">Type of Transaction</th>
+        <th scope="col">Name of Transaction</th>
+        <th scope="col">Price of Transaction</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for transaction in transactionHistories %}
+      <tr>
+        <!--  <th name="index" scope="row">{{ loop.index }}</th> -->
+        <td>{{transaction[0]}}</td>
+        <td>{{transaction[1]}}</td>
+        <td>{{transaction[2]}}</td>
+        <td class="usd">{{transaction[3]}}</td>
+        <!--  <td>
+          <button type="button" class="deleteButtons btn btn-danger">
+            DELETE
+          </button>
+        </td> -->
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

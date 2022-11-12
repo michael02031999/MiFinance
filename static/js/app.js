@@ -25,6 +25,14 @@ const formatter = new Intl.NumberFormat("en-US", {
 });
 
 try {
+  investmentSum = document.getElementById("investmentSum");
+  console.log(investmentSum.innerText);
+  investmentSum.innerText = formatter.format(investmentSum.innerText);
+} catch (error) {
+  console.log(error);
+}
+
+try {
   inputPrice = document.getElementsByClassName("inputPrice");
   console.log(inputPrice);
 

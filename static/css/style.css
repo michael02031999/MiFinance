@@ -162,3 +162,26 @@ body {
 #errorMessage {
   font-family: monospace !important;
 }
+
+/* LoggedIndex */
+
+h4 {
+  text-decoration: underline;
+}
+
+.tutorial {
+  margin-left: 25px;
+}
+
+#investmentButton {
+  background-color: lightgreen !important;
+}
+
+#investmentSum {
+  font-size: 50px;
+  color: rgb(40, 167, 69) !important;
+}
+
+#wallet {
+  max-width: 630px !important;
+}

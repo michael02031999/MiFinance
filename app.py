@@ -30,6 +30,8 @@ with db:
     cur = db.cursor()
 
 
+
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     return render_template("index.html")
@@ -39,6 +41,19 @@ def index2():
     #return str(session["id"])
     return render_template("loggedIndex.html")
 
+@app.route("/investments", methods=["GET", "POST"])
+def investments():
+    cur.execute("SELECT * FROM transactions WHERE id = ? AND type = ? AND name = ?", [session["id"], "Savings", "Investment"])
+    investments = cur.fetchall()
+
+    sum = 0
+
+    for investment in investments:
+        sum += investment[2]
+    
+    sum += sum * 0.07
+    
+    return render_template("investments.html", sum = sum)
 
 @app.route("/data", methods=["GET", "POST"])
 def data():

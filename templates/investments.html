@@ -1,0 +1,59 @@
+{% extends 'base.html' %} {% block title %} index {% endblock %} {% block icon
+%}
+
+<a class="miFinance text navbar-brand" href="/loggedIndex">MiFinance</a>
+
+{% endblock %} {% block nav %}
+
+<li>
+  <a class="text nav-link active" aria-current="page" href="/data">Data</a>
+</li>
+<li class="nav-item">
+  <a class="text nav-link" href="/journal">Journal</a>
+</li>
+<li class="nav-item">
+  <a class="text nav-link" href="/quick_add">Quick Add</a>
+</li>
+<li class="nav-item">
+  <a class="text nav-link" href="/investments">Investments</a>
+</li>
+
+{% endblock %} {% block logout %}
+
+<a id="logoutButton" class="text nav-link" href="/logout">Logout</a>
+
+{% endblock %} {% block content%}
+<div class="container pt-5" id=wallet>
+
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button
+        class="accordion-button"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapseOne"
+        aria-expanded="true"
+        aria-controls="collapseOne"
+        id="investmentButton"
+      >
+        Check how much money you should expect in a year's time based on your investment: Ka-ching!
+      </button>
+    </h2>
+    <div
+      id="collapseOne"
+      class="accordion-collapse collapse show"
+      aria-labelledby="headingOne"
+      data-bs-parent="#accordionExample"
+    >
+      <div class="accordion-body d-flex flex-column flex-sm-row align-items-center justify-content-between border border-5 border-success p-5">
+       <img style = "height: 225px" class="" src = "static/images/walletMan.png">
+       <div id="investmentSum">{{sum}}</div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+  {% endblock %}
+</div>

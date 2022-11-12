@@ -14,6 +14,9 @@
 <li class="nav-item">
   <a class="text nav-link" href="/quick_add">Quick Add</a>
 </li>
+<li class="nav-item">
+  <a class="text nav-link" href="/investments">Investments</a>
+</li>
 
 {% endblock %} {% block logout %}
 
@@ -29,7 +32,7 @@
   </div>
   <div class="row mb-4 p-5 pt-4">
     <h4>Data</h4>
-    <p>
+    <p class="tutorial mb-4">
       Upon login, the user will be presented with a pie chart and line chart.
       The pie chart has no real values yet because the user did not input any,
       and the same is true of the line chart. The pie chart shows distribution
@@ -40,7 +43,7 @@
     </p>
 
     <h4>Journal</h4>
-    <p>
+    <p class="tutorial mb-4">
       The <strong>Journal</strong> section is where you will be keeping track of
       every transaction. It is important to note that to write a successful
       journal entry, you must input the month number, transaction type,
@@ -50,10 +53,17 @@
     </p>
 
     <h4>Quick Add</h4>
-    <p>
+    <p class="tutorial">
       This is my favorite section. This app is very smart by detecting three or
       more of the same purchases. Be careful, for this to work, those three
       purchases must be spelled the exact same way!
+    </p>
+
+    <h4>Investments</h4>
+    <p class="tutorial">
+      For the investments tab to work, you must have money put into your savings
+      labeled as "investment." This works by totaling your investments up to the
+      current month, and projecting what you will have in a year.
     </p>
   </div>
 </div>

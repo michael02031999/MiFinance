@@ -62,6 +62,13 @@ if ((savingsTemp == "NaN") | (needsTemp == "NaN") | (wantsTemp == "NaN")) {
   localStorage.setItem("total", 180);
 }
 
+if ((savingsTemp == 0) & (needsTemp == 0) & (wantsTemp == 0)) {
+  localStorage.setItem("savings", 60);
+  localStorage.setItem("needs", 60);
+  localStorage.setItem("wants", 60);
+  localStorage.setItem("total", 180);
+}
+
 console.log(localStorage.getItem("needs"));
 console.log(localStorage.getItem("wants"));
 console.log(localStorage.getItem("savings"));
@@ -162,7 +169,7 @@ try {
 }
 
 var xValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-var yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+var yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15, 0];
 
 try {
   localStorage.setItem("January", 0),

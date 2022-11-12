@@ -28,7 +28,6 @@ icon %}
         <th scope="col">Month</th>
         <th scope="col">Type</th>
         <th scope="col">Name</th>
-        <th scope="col">Price</th>
         <th scope="col">Form</th>
       </tr>
     </thead>
@@ -39,7 +38,7 @@ icon %}
         <th scope="row">{{ transactionAboveFive[0] }}</th>
         <td>{{ transactionAboveFive[1] }}</td>
         <td>{{ transactionAboveFive[2] }}</td>
-        <td>{{ transactionAboveFive[3] }}</td>
+
         <td>
           <form
             class="row g-2 d-flex align-items-center flex-column"
@@ -65,12 +64,20 @@ icon %}
               />
             </div>
             <div class="col-auto">
+              <p class="formPrice" style="display: none" }>
+                {{transactionAboveFive[3]}}
+              </p>
               <input
                 name="price"
                 type="text"
-                class="form-control form-control-lg text-center w-100"
+                class="
+                  form-control form-control-lg
+                  text-center
+                  w-100
+                  inputPrice
+                "
                 placeholder="Price"
-                value="{{transactionAboveFive[3]}}"
+                value=""
               />
             </div>
             <button type="submit" class="btn btn-danger w-50">

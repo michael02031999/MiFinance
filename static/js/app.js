@@ -25,8 +25,28 @@ const formatter = new Intl.NumberFormat("en-US", {
 });
 
 try {
+  inputPrice = document.getElementsByClassName("inputPrice");
+  console.log(inputPrice);
+
+  formPrice = document.getElementsByClassName("formPrice");
+
+  console.log(formPrice[0]);
+
+  for (let i = 0; i < formPrice.length; i++) {
+    formPrice[i]["innerText"] = formatter.format(formPrice[i]["innerText"]);
+  }
+
+  for (let i = 0; i < inputPrice.length; i++) {
+    inputPrice[i].value = formPrice[i]["innerText"];
+  }
+} catch (error) {
+  console.log(error);
+}
+
+try {
   cash = document.getElementById("cashOnHandFormatter");
   notificationMoney = document.getElementById("moreMoneyNotice");
+  formPrice = document.getElementsByClassName("formPrice");
 
   console.log(parseInt(cash.innerText));
   console.log(Math.sign(parseInt(cash.innerText)));

@@ -26,6 +26,15 @@ body {
   border: 10px solid #ffffdb;
   border-top: none;
   border-bottom: none;
+  max-width: 1000px !important;
+}
+
+@media screen and (min-width: 768px) {
+  .appDescription {
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+    padding-bottom: 60px !important;
+  }
 }
 
 .instructions {
@@ -56,6 +65,7 @@ body {
   gap: 0px;
   align-items: flex-start;
   justify-content: center;
+  margin: auto;
 }
 
 .carouselList2 {
@@ -167,10 +177,12 @@ body {
 
 h4 {
   text-decoration: underline;
+  color: green;
 }
 
 .tutorial {
-  margin-left: 25px;
+  padding-top: 10px;
+  margin-left: 0px;
 }
 
 #investmentButton {
@@ -184,4 +196,8 @@ h4 {
 
 #wallet {
   max-width: 630px !important;
+}
+
+#purchase_againButton {
+  width: 100%;
 }

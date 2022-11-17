@@ -1,12 +1,19 @@
-{% extends 'base.html' %} {% block title %} index {% endblock %} {% block icon
-%}
+{% extends 'base.html' %} {% block title %} index {% endblock %}
+{% block icon %}
 
-<a class="miFinance text navbar-brand" href="/loggedIndex">MiFinance</a>
+<a class="miFinance text navbar-brand" href="/loggedIndex"
+  >MiFinance</a
+>
 
 {% endblock %} {% block nav %}
 
 <li>
-  <a class="text nav-link active" aria-current="page" href="/data">Data</a>
+  <a
+    class="text nav-link active"
+    aria-current="page"
+    href="/data"
+    >Data</a
+  >
 </li>
 <li class="nav-item">
   <a class="text nav-link" href="/journal">Journal</a>
@@ -20,51 +27,61 @@
 
 {% endblock %} {% block logout %}
 
-<a id="logoutButton" class="text nav-link" href="/logout">Logout</a>
+<a id="logoutButton" class="text nav-link" href="/logout"
+  >Logout</a
+>
 
 {% endblock %} {% block content %}
 
-<div class="appDescription container p-5">
+<div class="appDescription container pt-5">
   <div class="row">
     <div class="col text-center">
       <h1>How to use MiFinance</h1>
     </div>
   </div>
-  <div class="row mb-4 p-5 pt-4">
-    <h4>Data</h4>
-    <p class="tutorial mb-4">
-      Upon login, the user will be presented with a pie chart and line chart.
-      The pie chart has no real values yet because the user did not input any,
-      and the same is true of the line chart. The pie chart shows distribution
-      of how you spend your money for the current month. The line chart shows
-      your monthly spendings. At the very top, you have the ability to input
-      cash. The cash amount does not affect the data. Essentially, this number
-      should mirror your bank account!
-    </p>
+  <div class="row mb-4 pt-4">
+    <h4 class="loggedIndexHeading">Data</h4>
+    <div class="col col-12">
+      <p class="tutorial mb-4">
+        Upon <strong>login</strong>, the user will be presented
+        with a pie chart and line chart. The pie chart has no
+        real values yet because the user did not input any, and
+        the same is true of the line chart. The pie chart shows
+        distribution of how you spend your money for the current
+        month. The line chart shows your monthly spendings. At
+        the very top, you have the ability to input cash. The
+        cash amount does not affect the data. Essentially, this
+        number should mirror your bank account!
+      </p>
 
-    <h4>Journal</h4>
-    <p class="tutorial mb-4">
-      The <strong>Journal</strong> section is where you will be keeping track of
-      every transaction. It is important to note that to write a successful
-      journal entry, you must input the month number, transaction type,
-      transaction name, and price. When you click submit, the transaction should
-      be displayed below. When you click to see the data, data will only be
-      shown for the current month.
-    </p>
+      <h4 class="loggedIndexHeading">Journal</h4>
+      <p class="tutorial mb-4">
+        The <strong>Journal</strong> section is where you will be
+        keeping track of every transaction. It is important to
+        note that to write a successful journal entry, you must
+        input the month number, transaction type, transaction
+        name, and price. When you click submit, the transaction
+        should be displayed below. When you click to see the
+        data, data will only be shown for the current month.
+      </p>
 
-    <h4>Quick Add</h4>
-    <p class="tutorial">
-      This is my favorite section. This app is very smart by detecting three or
-      more of the same purchases. Be careful, for this to work, those three
-      purchases must be spelled the exact same way!
-    </p>
+      <h4 class="loggedIndexHeading">Quick Add</h4>
+      <p class="tutorial">
+        This is my favorite section. This app is very smart by
+        detecting three or more of the same purchases. Be
+        careful, for this to work, those three purchases must be
+        spelled the exact same way!
+      </p>
 
-    <h4>Investments</h4>
-    <p class="tutorial">
-      For the investments tab to work, you must have money put into your savings
-      labeled as "Investment." This works by totaling your investments up to the
-      current month, and projecting what you will have in a year.
-    </p>
+      <h4 class="loggedIndexHeading">Investments</h4>
+      <p class="tutorial">
+        For the <strong>Investments</strong> tab to work, you
+        must have money put into your savings labeled as
+        "Investment." This works by totaling your investments up
+        to the current month, and projecting what you will have
+        in a year.
+      </p>
+    </div>
   </div>
 </div>
 
